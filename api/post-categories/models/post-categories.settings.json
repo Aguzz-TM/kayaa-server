@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "post_categories",
+  "info": {
+    "name": "Post Categories"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "category_name": {
+      "type": "string",
+      "default": "undefinied",
+      "private": false,
+      "unique": true,
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "default": "undefinied",
+      "unique": true,
+      "required": true
+    },
+    "posts": {
+      "via": "post_categories",
+      "collection": "posts"
+    }
+  }
+}

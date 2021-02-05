@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_categories",
+  "info": {
+    "name": "Product Categories"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "category_name": {
+      "type": "string",
+      "required": false,
+      "unique": true,
+      "default": "Undefinied"
+    },
+    "slug": {
+      "type": "string",
+      "default": "undefinied",
+      "required": true,
+      "unique": true
+    }
+  }
+}

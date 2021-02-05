@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "Posts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "post_title": {
+      "type": "string",
+      "required": true
+    },
+    "post_content": {
+      "type": "richtext"
+    },
+    "post_categories": {
+      "collection": "post-categories",
+      "via": "posts",
+      "dominant": true
+    },
+    "user": {
+      "via": "posts",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "related_products": {
+      "via": "posts",
+      "collection": "catalogs",
+      "dominant": true
+    }
+  }
+}
